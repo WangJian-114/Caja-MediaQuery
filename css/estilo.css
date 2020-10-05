@@ -1,0 +1,106 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+body{
+    margin:0;
+}
+
+.cajaHeader {
+    width: 95%;
+    height: 150px;
+    margin: 10px auto;
+    background-color: lightgreen;
+}
+
+.cajaSection {
+    width: 95%;
+    height: 220px;
+    margin: 10px auto;
+    background-color: lightseagreen;
+}
+
+.cajaFooter {
+    width: 95%;
+    height: 100px;
+    background-color: lightsteelblue;
+    margin: 10px auto;
+}
+
+#dos,#tres,#cuatro {
+    display: none;
+}
+
+
+/* Media Query */
+/* Table */
+@media screen and (min-width:768px) and (max-width:970px){
+    .cajaHeader {
+        width: 98%;
+        height: 200px;
+    }
+    
+    .cajaSection {
+        width: 98%;
+        height: 220px;
+
+    }
+
+    #dos,#tres,#cuatro {
+        display: block;
+    }
+
+    .contenedor-footer{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .cajaFooter {
+        height: 170px;
+        flex-basis: 48%;
+
+    }   
+}
+
+/* Compu */
+
+@media (min-width: 980px) {
+
+    .cajaHeader {
+        width: 99%;
+        height: 200px;
+    }
+
+    #dos,#tres,#cuatro {
+        display: block;
+    }
+
+    .contenedor-main {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    .cajaSection {
+        height: 500px;
+        flex-basis: calc(33% - 10px);
+    }
+
+   
+    
+    .contenedor-footer{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .cajaFooter {
+        height: 170px;
+        flex-basis: 24%;
+    }     
+}
